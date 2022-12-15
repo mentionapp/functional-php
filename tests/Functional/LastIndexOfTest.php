@@ -40,16 +40,6 @@ class LastIndexOfTest extends AbstractTestCase
         self::assertFalse(last_index_of($this->hashIterator, 'invalidValue'));
     }
 
-    public function testPassCallback(): void
-    {
-        self::assertSame(
-            3,
-            last_index_of($this->list, function ($element) {
-                return $element;
-            })
-        );
-    }
-
     public function testPassNoCollection(): void
     {
         $this->expectArgumentError('Functional\last_index_of() expects parameter 1 to be array or instance of Traversable');

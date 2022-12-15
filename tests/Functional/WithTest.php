@@ -50,7 +50,6 @@ class WithTest extends AbstractTestCase
                 null,
                 static function () {
                 },
-                false,
                 'foo'
             )
         );

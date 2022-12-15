@@ -18,7 +18,7 @@ use Traversable;
  * empty array if no values were found.
  *
  * @param Traversable|array $collection
- * @param mixed|callable $value
+ * @param mixed $value
  * @return array
  * @no-named-arguments
  */
@@ -28,17 +28,9 @@ function indexes_of($collection, $value)
 
     $result = [];
 
-    if (\is_callable($value)) {
-        foreach ($collection as $index => $element) {
-            if ($element === $value($element, $index, $collection)) {
-                $result[] = $index;
-            }
-        }
-    } else {
-        foreach ($collection as $index => $element) {
-            if ($element === $value) {
-                $result[] = $index;
-            }
+    foreach ($collection as $index => $element) {
+        if ($element === $value) {
+            $result[] = $index;
         }
     }
 

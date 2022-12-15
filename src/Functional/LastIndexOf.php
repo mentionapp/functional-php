@@ -27,17 +27,9 @@ function last_index_of($collection, $value)
 
     $matchingIndex = false;
 
-    if (\is_callable($value)) {
-        foreach ($collection as $index => $element) {
-            if ($element === $value($element, $index, $collection)) {
-                $matchingIndex = $index;
-            }
-        }
-    } else {
-        foreach ($collection as $index => $element) {
-            if ($element === $value) {
-                $matchingIndex = $index;
-            }
+    foreach ($collection as $index => $element) {
+        if ($element === $value) {
+            $matchingIndex = $index;
         }
     }
 
